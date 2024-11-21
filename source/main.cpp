@@ -84,9 +84,7 @@ int main(){
     // std::cout << "average_distance_between_vertexes: " << total_distance_between_vertexes/(3*count) << '\n';
     // std::cout << "dispersion: " << total_dispersion/count << '\n';
     
-
     octtree root{sum_vect/count, total_dispersion/count};
-    // octtree root{{0,0,0}, 40};
     
 
     for(int i = 0; i < count; i++) {
@@ -112,30 +110,8 @@ int main(){
     }
     std::cout << '\n';
     
-    count_usual(Triangles, count);
+    // count_usual(Triangles, count);
 
     delete Triangles;
     return 0;
 }
-
-/*
-агрегат - все, похожее на сишные массивы и структуры (без конструкторов)
-struct S {int x = 0, y = 0;};
-S s{1, 2}; - агрегатная инициализация.
-
-struct T {int x = 0, y = 0; T(int a, int b): x(a+b) {}}
-T t{1, 2}; // вызов конструктора
-
-основные виды инициализации
-
-int global; //zero-inint
-
-int foo(){
-    std::vector<int> v; //default-init
-    int j{}; //value-init
-    int k = 7; //copy-init
-    int i{7}; //direct-init
-    std::vector<int> w {1, 2, 3}; //direct-list-init
-    std::vector<int> z = {1, 2, 3}; //copy-list-init
-}
-*/

@@ -215,7 +215,7 @@ class octtree{
                         (!(tr->vertexes[1]-new_node_center).incube(_lenght/2))||
                         (!(tr->vertexes[2]-new_node_center).incube(_lenght/2))) {  
                         //triangle has points outside new node's subspace interior  
-                        std::cout << "bruh in " << _center << " with\n" << *tr << '\n';
+                        std::cout << "smth bad in " << _center << " with\n" << *tr << '\n';
                         std::cout << new_node_center << '\n';
                         std::cout << tr->vertexes[0]-new_node_center << ' ' << tr->vertexes[0]-new_node_center << ' ' << tr->vertexes[0]-new_node_center << ' ' << _lenght/2 << "\n\n";
                         return 0;
@@ -244,7 +244,6 @@ class octtree{
             printqueue.push_back(this);
 
             while(printqueue.begin() != printqueue.end()){
-                // std::cout << "bbruh" << '\n';
                 octtree* elem = *(printqueue.begin());
                 printqueue.pop_front();
             
@@ -276,22 +275,13 @@ class octtree{
                 for(auto i = elem->bound_intersections.begin(); i != elem->bound_intersections.end(); i++){
                     auto j = i;
                     j++;
-                    while(j != elem->bound_intersections.end()){
-
-                        // std::cout << (*i)->index << " and " << (*j)->index << '\n';
-                        
+                    while(j != elem->bound_intersections.end()){                        
                         if (intersect_triangles(**i, **j)) {
                             count++;
                             (*i)->intersected = 1;
                             (*j)->intersected = 1;
-
-                            // if (((*i)->index == 109) || ((*j)->index == 109)){
-                            //     std::cout << (*i)->index << " and " << (*j)->index << '\n';
-                            //     std::cout << (**i) << '\n' << **j << '\n';
-                            // }
                         }
                         j++;
-                        // std::cout << "done\n";
                     }
                 }
 
@@ -299,16 +289,10 @@ class octtree{
                     for(int i = 0; i < 8; i++){
                         if (elem->subspace[i] == nullptr) continue;
                         for(auto &subspace_tr: elem->subspace[i]->interior){
-                            // std::cout << tr->index << " and " << subspace_tr->index << '\n';
                             if(intersect_triangles(*tr, *subspace_tr)){
                                 count++;
                                 tr->intersected = 1;
                                 subspace_tr->intersected = 1;
-                                
-                                // if ((tr->index == 109) || (subspace_tr->index == 109)){
-                                //     std::cout << *tr << " and " << *subspace_tr << '\n';
-                                // }
-
                             }
                         }
                     }
