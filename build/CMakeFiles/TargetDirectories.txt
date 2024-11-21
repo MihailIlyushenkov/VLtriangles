@@ -1,0 +1,4 @@
+/home/mihail/Документы/coding/C++ projects/VLtriangles/build/CMakeFiles/Triglib.dir
+/home/mihail/Документы/coding/C++ projects/VLtriangles/build/CMakeFiles/triangles.dir
+/home/mihail/Документы/coding/C++ projects/VLtriangles/build/CMakeFiles/edit_cache.dir
+/home/mihail/Документы/coding/C++ projects/VLtriangles/build/CMakeFiles/rebuild_cache.dir

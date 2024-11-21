@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/triangles.dir/source/main.cpp.o -o ../bin/triangles  libTriglib.a 
