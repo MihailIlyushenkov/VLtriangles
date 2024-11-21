@@ -1,2 +1,0 @@
-/usr/bin/ar qc libTriglib.a CMakeFiles/Triglib.dir/source/main.cpp.o CMakeFiles/Triglib.dir/source/geom.cpp.o CMakeFiles/Triglib.dir/source/operators.cpp.o
-/usr/bin/ranlib libTriglib.a
